@@ -90,4 +90,13 @@ public class Employee {
         raise = salary * raise;
         salary += raise;
     }
+
+    @Override
+    public String toString() {
+        String rtnStr = "id: " + id + "\n" + "fname: " + fname + "\n" + "lname: " + lname + "\n" + "salary: " + salary
+                + "\n" + "has401K: " + has401K + "\n" + "companyID: " + companyID + "\n" + "healthPlanID: "
+                + healthPlanID + "\n";
+        ;
+        return rtnStr;
+    }
 }
