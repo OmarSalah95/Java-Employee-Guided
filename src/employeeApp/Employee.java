@@ -3,6 +3,7 @@ package employeeApp;
 public class Employee {
     // Objects Data fields or State
     private int id;
+    private static int maxID = 0;
     private String fname;
     private String lname;
     private double salary;
@@ -10,8 +11,20 @@ public class Employee {
     private int companyID;
     private int healthPlanID;
 
-    // Methods
+    // Construct
+    public Employee(String fname, String lname, double salary, boolean has401K, int companyID, int healthPlanID) {
+        maxID++;
+        id = maxID;
 
+        this.fname = fname;
+        this.lname = lname;
+        this.salary = salary;
+        this.has401K = has401K;
+        this.companyID = companyID;
+        this.healthPlanID = healthPlanID;
+    }
+
+    // Methods
     // Getters && Setters
     public int getId() {
         return id;
@@ -65,5 +78,16 @@ public class Employee {
 
     public void setHealthPlanID(int healthPlanID) {
         this.healthPlanID = healthPlanID;
+    }
+
+    // Standard Action Methods/Behaviors
+    public String getName() {
+        return fname + " " + lname;
+    }
+
+    public void giveRaise(double raise) {
+        double raiseAmt;
+        raise = salary * raise;
+        salary += raise;
     }
 }
