@@ -9,7 +9,7 @@ public class Company {
     public String name;
     public int debt;
 
-    public Company(int id, String name, int debt) {
+    public Company(String name, int debt) {
         maxID++;
         id = maxID;
 
